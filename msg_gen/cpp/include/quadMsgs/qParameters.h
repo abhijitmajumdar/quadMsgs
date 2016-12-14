@@ -27,6 +27,7 @@ struct qParameters_ {
   , qP(0)
   , qI(0)
   , qD(0)
+  , qPA(0)
   {
   }
 
@@ -36,6 +37,7 @@ struct qParameters_ {
   , qP(0)
   , qI(0)
   , qD(0)
+  , qPA(0)
   {
   }
 
@@ -53,6 +55,9 @@ struct qParameters_ {
 
   typedef int32_t _qD_type;
   int32_t qD;
+
+  typedef int32_t _qPA_type;
+  int32_t qPA;
 
 
   typedef boost::shared_ptr< ::quadMsgs::qParameters_<ContainerAllocator> > Ptr;
@@ -82,12 +87,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::quadMsgs::qParameters_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "0830475864f59191f54bf4201416e8bf";
+    return "e6c5da4d4ba5b3b45d6ca7e2e598338b";
   }
 
   static const char* value(const  ::quadMsgs::qParameters_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x0830475864f59191ULL;
-  static const uint64_t static_value2 = 0xf54bf4201416e8bfULL;
+  static const uint64_t static_value1 = 0xe6c5da4d4ba5b3b4ULL;
+  static const uint64_t static_value2 = 0x5d6ca7e2e598338bULL;
 };
 
 template<class ContainerAllocator>
@@ -109,6 +114,7 @@ int32 qThrottle\n\
 int32 qP\n\
 int32 qI\n\
 int32 qD\n\
+int32 qPA\n\
 \n\
 ";
   }
@@ -134,6 +140,7 @@ template<class ContainerAllocator> struct Serializer< ::quadMsgs::qParameters_<C
     stream.next(m.qP);
     stream.next(m.qI);
     stream.next(m.qD);
+    stream.next(m.qPA);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER
@@ -161,6 +168,8 @@ struct Printer< ::quadMsgs::qParameters_<ContainerAllocator> >
     Printer<int32_t>::stream(s, indent + "  ", v.qI);
     s << indent << "qD: ";
     Printer<int32_t>::stream(s, indent + "  ", v.qD);
+    s << indent << "qPA: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.qPA);
   }
 };
 

@@ -32,19 +32,34 @@
     :initarg :qM4
     :type cl:float
     :initform 0.0)
-   (qX
-    :reader qX
-    :initarg :qX
+   (qXa
+    :reader qXa
+    :initarg :qXa
     :type cl:float
     :initform 0.0)
-   (qY
-    :reader qY
-    :initarg :qY
+   (qYa
+    :reader qYa
+    :initarg :qYa
     :type cl:float
     :initform 0.0)
-   (qZ
-    :reader qZ
-    :initarg :qZ
+   (qZa
+    :reader qZa
+    :initarg :qZa
+    :type cl:float
+    :initform 0.0)
+   (qXg
+    :reader qXg
+    :initarg :qXg
+    :type cl:float
+    :initform 0.0)
+   (qYg
+    :reader qYg
+    :initarg :qYg
+    :type cl:float
+    :initform 0.0)
+   (qZg
+    :reader qZg
+    :initarg :qZg
     :type cl:float
     :initform 0.0))
 )
@@ -82,20 +97,35 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qM4-val is deprecated.  Use quadMsgs-msg:qM4 instead.")
   (qM4 m))
 
-(cl:ensure-generic-function 'qX-val :lambda-list '(m))
-(cl:defmethod qX-val ((m <qStatus>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qX-val is deprecated.  Use quadMsgs-msg:qX instead.")
-  (qX m))
+(cl:ensure-generic-function 'qXa-val :lambda-list '(m))
+(cl:defmethod qXa-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qXa-val is deprecated.  Use quadMsgs-msg:qXa instead.")
+  (qXa m))
 
-(cl:ensure-generic-function 'qY-val :lambda-list '(m))
-(cl:defmethod qY-val ((m <qStatus>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qY-val is deprecated.  Use quadMsgs-msg:qY instead.")
-  (qY m))
+(cl:ensure-generic-function 'qYa-val :lambda-list '(m))
+(cl:defmethod qYa-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qYa-val is deprecated.  Use quadMsgs-msg:qYa instead.")
+  (qYa m))
 
-(cl:ensure-generic-function 'qZ-val :lambda-list '(m))
-(cl:defmethod qZ-val ((m <qStatus>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qZ-val is deprecated.  Use quadMsgs-msg:qZ instead.")
-  (qZ m))
+(cl:ensure-generic-function 'qZa-val :lambda-list '(m))
+(cl:defmethod qZa-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qZa-val is deprecated.  Use quadMsgs-msg:qZa instead.")
+  (qZa m))
+
+(cl:ensure-generic-function 'qXg-val :lambda-list '(m))
+(cl:defmethod qXg-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qXg-val is deprecated.  Use quadMsgs-msg:qXg instead.")
+  (qXg m))
+
+(cl:ensure-generic-function 'qYg-val :lambda-list '(m))
+(cl:defmethod qYg-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qYg-val is deprecated.  Use quadMsgs-msg:qYg instead.")
+  (qYg m))
+
+(cl:ensure-generic-function 'qZg-val :lambda-list '(m))
+(cl:defmethod qZg-val ((m <qStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader quadMsgs-msg:qZg-val is deprecated.  Use quadMsgs-msg:qZg instead.")
+  (qZg m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <qStatus>) ostream)
   "Serializes a message object of type '<qStatus>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'qID)) ostream)
@@ -122,17 +152,32 @@
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qX))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qXa))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qY))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qYa))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qZ))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qZa))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qXg))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qYg))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'qZg))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -173,19 +218,37 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'qX) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'qXa) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'qY) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'qYa) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'qZ) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'qZa) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'qXg) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'qYg) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'qZg) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<qStatus>)))
@@ -196,18 +259,21 @@
   "quadMsgs/qStatus")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<qStatus>)))
   "Returns md5sum for a message object of type '<qStatus>"
-  "df901bb2191a858d16919529be70d818")
+  "3f48c09f9ab6c47f423fbfa407f4d9a0")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'qStatus)))
   "Returns md5sum for a message object of type 'qStatus"
-  "df901bb2191a858d16919529be70d818")
+  "3f48c09f9ab6c47f423fbfa407f4d9a0")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<qStatus>)))
   "Returns full string definition for message of type '<qStatus>"
-  (cl:format cl:nil "uint32 qID~%float32 qM1~%float32 qM2~%float32 qM3~%float32 qM4~%float32 qX~%float32 qY~%float32 qZ~%~%~%"))
+  (cl:format cl:nil "uint32 qID~%float32 qM1~%float32 qM2~%float32 qM3~%float32 qM4~%float32 qXa~%float32 qYa~%float32 qZa~%float32 qXg~%float32 qYg~%float32 qZg~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'qStatus)))
   "Returns full string definition for message of type 'qStatus"
-  (cl:format cl:nil "uint32 qID~%float32 qM1~%float32 qM2~%float32 qM3~%float32 qM4~%float32 qX~%float32 qY~%float32 qZ~%~%~%"))
+  (cl:format cl:nil "uint32 qID~%float32 qM1~%float32 qM2~%float32 qM3~%float32 qM4~%float32 qXa~%float32 qYa~%float32 qZa~%float32 qXg~%float32 qYg~%float32 qZg~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <qStatus>))
   (cl:+ 0
+     4
+     4
+     4
      4
      4
      4
@@ -225,7 +291,10 @@
     (cl:cons ':qM2 (qM2 msg))
     (cl:cons ':qM3 (qM3 msg))
     (cl:cons ':qM4 (qM4 msg))
-    (cl:cons ':qX (qX msg))
-    (cl:cons ':qY (qY msg))
-    (cl:cons ':qZ (qZ msg))
+    (cl:cons ':qXa (qXa msg))
+    (cl:cons ':qYa (qYa msg))
+    (cl:cons ':qZa (qZa msg))
+    (cl:cons ':qXg (qXg msg))
+    (cl:cons ':qYg (qYg msg))
+    (cl:cons ':qZg (qZg msg))
 ))

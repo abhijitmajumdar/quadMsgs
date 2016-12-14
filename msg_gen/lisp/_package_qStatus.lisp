@@ -9,10 +9,16 @@
           QM3
           QM4-VAL
           QM4
-          QX-VAL
-          QX
-          QY-VAL
-          QY
-          QZ-VAL
-          QZ
+          QXA-VAL
+          QXA
+          QYA-VAL
+          QYA
+          QZA-VAL
+          QZA
+          QXG-VAL
+          QXG
+          QYG-VAL
+          QYG
+          QZG-VAL
+          QZG
 ))

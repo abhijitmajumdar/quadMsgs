@@ -9,4 +9,6 @@
           QI
           QD-VAL
           QD
+          QPA-VAL
+          QPA
 ))

@@ -7,7 +7,7 @@ import struct
 
 
 class qParameters(genpy.Message):
-  _md5sum = "0830475864f59191f54bf4201416e8bf"
+  _md5sum = "e6c5da4d4ba5b3b45d6ca7e2e598338b"
   _type = "quadMsgs/qParameters"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """uint32 qID
@@ -15,9 +15,10 @@ int32 qThrottle
 int32 qP
 int32 qI
 int32 qD
+int32 qPA
 """
-  __slots__ = ['qID','qThrottle','qP','qI','qD']
-  _slot_types = ['uint32','int32','int32','int32','int32']
+  __slots__ = ['qID','qThrottle','qP','qI','qD','qPA']
+  _slot_types = ['uint32','int32','int32','int32','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -27,7 +28,7 @@ int32 qD
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       qID,qThrottle,qP,qI,qD
+       qID,qThrottle,qP,qI,qD,qPA
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -46,12 +47,15 @@ int32 qD
         self.qI = 0
       if self.qD is None:
         self.qD = 0
+      if self.qPA is None:
+        self.qPA = 0
     else:
       self.qID = 0
       self.qThrottle = 0
       self.qP = 0
       self.qI = 0
       self.qD = 0
+      self.qPA = 0
 
   def _get_types(self):
     """
@@ -66,7 +70,7 @@ int32 qD
     """
     try:
       _x = self
-      buff.write(_get_struct_I4i().pack(_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD))
+      buff.write(_get_struct_I5i().pack(_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD, _x.qPA))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -79,8 +83,8 @@ int32 qD
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD,) = _get_struct_I4i().unpack(str[start:end])
+      end += 24
+      (_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD, _x.qPA,) = _get_struct_I5i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -94,7 +98,7 @@ int32 qD
     """
     try:
       _x = self
-      buff.write(_get_struct_I4i().pack(_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD))
+      buff.write(_get_struct_I5i().pack(_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD, _x.qPA))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,8 +112,8 @@ int32 qD
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD,) = _get_struct_I4i().unpack(str[start:end])
+      end += 24
+      (_x.qID, _x.qThrottle, _x.qP, _x.qI, _x.qD, _x.qPA,) = _get_struct_I5i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -118,9 +122,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_I4i = None
-def _get_struct_I4i():
-    global _struct_I4i
-    if _struct_I4i is None:
-        _struct_I4i = struct.Struct("<I4i")
-    return _struct_I4i
+_struct_I5i = None
+def _get_struct_I5i():
+    global _struct_I5i
+    if _struct_I5i is None:
+        _struct_I5i = struct.Struct("<I5i")
+    return _struct_I5i

@@ -27,9 +27,12 @@ struct qStatus_ {
   , qM2(0.0)
   , qM3(0.0)
   , qM4(0.0)
-  , qX(0.0)
-  , qY(0.0)
-  , qZ(0.0)
+  , qXa(0.0)
+  , qYa(0.0)
+  , qZa(0.0)
+  , qXg(0.0)
+  , qYg(0.0)
+  , qZg(0.0)
   {
   }
 
@@ -39,9 +42,12 @@ struct qStatus_ {
   , qM2(0.0)
   , qM3(0.0)
   , qM4(0.0)
-  , qX(0.0)
-  , qY(0.0)
-  , qZ(0.0)
+  , qXa(0.0)
+  , qYa(0.0)
+  , qZa(0.0)
+  , qXg(0.0)
+  , qYg(0.0)
+  , qZg(0.0)
   {
   }
 
@@ -60,14 +66,23 @@ struct qStatus_ {
   typedef float _qM4_type;
   float qM4;
 
-  typedef float _qX_type;
-  float qX;
+  typedef float _qXa_type;
+  float qXa;
 
-  typedef float _qY_type;
-  float qY;
+  typedef float _qYa_type;
+  float qYa;
 
-  typedef float _qZ_type;
-  float qZ;
+  typedef float _qZa_type;
+  float qZa;
+
+  typedef float _qXg_type;
+  float qXg;
+
+  typedef float _qYg_type;
+  float qYg;
+
+  typedef float _qZg_type;
+  float qZg;
 
 
   typedef boost::shared_ptr< ::quadMsgs::qStatus_<ContainerAllocator> > Ptr;
@@ -97,12 +112,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::quadMsgs::qStatus_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "df901bb2191a858d16919529be70d818";
+    return "3f48c09f9ab6c47f423fbfa407f4d9a0";
   }
 
   static const char* value(const  ::quadMsgs::qStatus_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0xdf901bb2191a858dULL;
-  static const uint64_t static_value2 = 0x16919529be70d818ULL;
+  static const uint64_t static_value1 = 0x3f48c09f9ab6c47fULL;
+  static const uint64_t static_value2 = 0x423fbfa407f4d9a0ULL;
 };
 
 template<class ContainerAllocator>
@@ -124,9 +139,12 @@ float32 qM1\n\
 float32 qM2\n\
 float32 qM3\n\
 float32 qM4\n\
-float32 qX\n\
-float32 qY\n\
-float32 qZ\n\
+float32 qXa\n\
+float32 qYa\n\
+float32 qZa\n\
+float32 qXg\n\
+float32 qYg\n\
+float32 qZg\n\
 \n\
 ";
   }
@@ -152,9 +170,12 @@ template<class ContainerAllocator> struct Serializer< ::quadMsgs::qStatus_<Conta
     stream.next(m.qM2);
     stream.next(m.qM3);
     stream.next(m.qM4);
-    stream.next(m.qX);
-    stream.next(m.qY);
-    stream.next(m.qZ);
+    stream.next(m.qXa);
+    stream.next(m.qYa);
+    stream.next(m.qZa);
+    stream.next(m.qXg);
+    stream.next(m.qYg);
+    stream.next(m.qZg);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER
@@ -182,12 +203,18 @@ struct Printer< ::quadMsgs::qStatus_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.qM3);
     s << indent << "qM4: ";
     Printer<float>::stream(s, indent + "  ", v.qM4);
-    s << indent << "qX: ";
-    Printer<float>::stream(s, indent + "  ", v.qX);
-    s << indent << "qY: ";
-    Printer<float>::stream(s, indent + "  ", v.qY);
-    s << indent << "qZ: ";
-    Printer<float>::stream(s, indent + "  ", v.qZ);
+    s << indent << "qXa: ";
+    Printer<float>::stream(s, indent + "  ", v.qXa);
+    s << indent << "qYa: ";
+    Printer<float>::stream(s, indent + "  ", v.qYa);
+    s << indent << "qZa: ";
+    Printer<float>::stream(s, indent + "  ", v.qZa);
+    s << indent << "qXg: ";
+    Printer<float>::stream(s, indent + "  ", v.qXg);
+    s << indent << "qYg: ";
+    Printer<float>::stream(s, indent + "  ", v.qYg);
+    s << indent << "qZg: ";
+    Printer<float>::stream(s, indent + "  ", v.qZg);
   }
 };
 

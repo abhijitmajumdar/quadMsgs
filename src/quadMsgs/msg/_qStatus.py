@@ -7,7 +7,7 @@ import struct
 
 
 class qStatus(genpy.Message):
-  _md5sum = "df901bb2191a858d16919529be70d818"
+  _md5sum = "3f48c09f9ab6c47f423fbfa407f4d9a0"
   _type = "quadMsgs/qStatus"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """uint32 qID
@@ -15,12 +15,15 @@ float32 qM1
 float32 qM2
 float32 qM3
 float32 qM4
-float32 qX
-float32 qY
-float32 qZ
+float32 qXa
+float32 qYa
+float32 qZa
+float32 qXg
+float32 qYg
+float32 qZg
 """
-  __slots__ = ['qID','qM1','qM2','qM3','qM4','qX','qY','qZ']
-  _slot_types = ['uint32','float32','float32','float32','float32','float32','float32','float32']
+  __slots__ = ['qID','qM1','qM2','qM3','qM4','qXa','qYa','qZa','qXg','qYg','qZg']
+  _slot_types = ['uint32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -30,7 +33,7 @@ float32 qZ
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       qID,qM1,qM2,qM3,qM4,qX,qY,qZ
+       qID,qM1,qM2,qM3,qM4,qXa,qYa,qZa,qXg,qYg,qZg
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -49,21 +52,30 @@ float32 qZ
         self.qM3 = 0.
       if self.qM4 is None:
         self.qM4 = 0.
-      if self.qX is None:
-        self.qX = 0.
-      if self.qY is None:
-        self.qY = 0.
-      if self.qZ is None:
-        self.qZ = 0.
+      if self.qXa is None:
+        self.qXa = 0.
+      if self.qYa is None:
+        self.qYa = 0.
+      if self.qZa is None:
+        self.qZa = 0.
+      if self.qXg is None:
+        self.qXg = 0.
+      if self.qYg is None:
+        self.qYg = 0.
+      if self.qZg is None:
+        self.qZg = 0.
     else:
       self.qID = 0
       self.qM1 = 0.
       self.qM2 = 0.
       self.qM3 = 0.
       self.qM4 = 0.
-      self.qX = 0.
-      self.qY = 0.
-      self.qZ = 0.
+      self.qXa = 0.
+      self.qYa = 0.
+      self.qZa = 0.
+      self.qXg = 0.
+      self.qYg = 0.
+      self.qZg = 0.
 
   def _get_types(self):
     """
@@ -78,7 +90,7 @@ float32 qZ
     """
     try:
       _x = self
-      buff.write(_get_struct_I7f().pack(_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qX, _x.qY, _x.qZ))
+      buff.write(_get_struct_I10f().pack(_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qXa, _x.qYa, _x.qZa, _x.qXg, _x.qYg, _x.qZg))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,8 +103,8 @@ float32 qZ
       end = 0
       _x = self
       start = end
-      end += 32
-      (_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qX, _x.qY, _x.qZ,) = _get_struct_I7f().unpack(str[start:end])
+      end += 44
+      (_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qXa, _x.qYa, _x.qZa, _x.qXg, _x.qYg, _x.qZg,) = _get_struct_I10f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -106,7 +118,7 @@ float32 qZ
     """
     try:
       _x = self
-      buff.write(_get_struct_I7f().pack(_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qX, _x.qY, _x.qZ))
+      buff.write(_get_struct_I10f().pack(_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qXa, _x.qYa, _x.qZa, _x.qXg, _x.qYg, _x.qZg))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -120,8 +132,8 @@ float32 qZ
       end = 0
       _x = self
       start = end
-      end += 32
-      (_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qX, _x.qY, _x.qZ,) = _get_struct_I7f().unpack(str[start:end])
+      end += 44
+      (_x.qID, _x.qM1, _x.qM2, _x.qM3, _x.qM4, _x.qXa, _x.qYa, _x.qZa, _x.qXg, _x.qYg, _x.qZg,) = _get_struct_I10f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -130,9 +142,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_I7f = None
-def _get_struct_I7f():
-    global _struct_I7f
-    if _struct_I7f is None:
-        _struct_I7f = struct.Struct("<I7f")
-    return _struct_I7f
+_struct_I10f = None
+def _get_struct_I10f():
+    global _struct_I10f
+    if _struct_I10f is None:
+        _struct_I10f = struct.Struct("<I10f")
+    return _struct_I10f
